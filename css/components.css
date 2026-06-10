@@ -1,0 +1,409 @@
+/*
+ * components.css
+ * ─────────────────────────────────────────────────────────────
+ * Reusable UI components shared across section modals:
+ * cards, tags, skill bars, gap matrix, soft skills grid,
+ * timeline, tools grid, evidence cards.
+ * ─────────────────────────────────────────────────────────────
+ */
+
+/* ──────────────────────────────────────────────────────────── */
+/* CARD BASE                                                    */
+/* ──────────────────────────────────────────────────────────── */
+.card {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+/* Accent left-border variants */
+.card-accent-blue   { border-left: 3px solid var(--blue);   border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+.card-accent-teal   { border-left: 3px solid var(--teal);   border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+.card-accent-purple { border-left: 3px solid var(--purple); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+.card-accent-amber  { border-left: 3px solid var(--amber);  border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+
+/* ──────────────────────────────────────────────────────────── */
+/* MINI LABEL (eyebrow text above card sections)               */
+/* ──────────────────────────────────────────────────────────── */
+.mini-label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* TAGS                                                         */
+/* ──────────────────────────────────────────────────────────── */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 0.22rem 0.65rem;
+  border-radius: var(--radius-sm);
+  cursor: default;
+}
+
+.tag-blue {
+  background: var(--blue-light);
+  color: var(--blue-dark);
+  border: 1px solid var(--blue-mid);
+}
+
+.tag-teal {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  border: 1px solid var(--teal-mid);
+}
+
+.tag-purple {
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  border: 1px solid var(--purple-mid);
+}
+
+.tag-amber {
+  background: var(--amber-light);
+  color: var(--amber-dark);
+  border: 1px solid var(--amber-mid);
+}
+
+.tag-gray {
+  background: var(--surface-2);
+  color: var(--text-3);
+  border: 1px solid var(--border);
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* SKILL BARS                                                   */
+/* ──────────────────────────────────────────────────────────── */
+.skill-item { margin-bottom: 0.95rem; }
+
+.skill-item:last-child { margin-bottom: 0; }
+
+.skill-hd {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.skill-name {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.skill-pct {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--blue);
+}
+
+.skill-pct.dim { color: var(--text-3); }
+
+.skill-track {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 3px;
+  width: 0; /* animated to target by JS */
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sf-blue   { background: var(--blue);   }
+.sf-teal   { background: var(--teal);   }
+.sf-purple { background: var(--purple); }
+.sf-amber  { background: var(--amber);  }
+.sf-dim    { background: var(--border-2); }
+
+/* ──────────────────────────────────────────────────────────── */
+/* GAP MATRIX                                                   */
+/* ──────────────────────────────────────────────────────────── */
+.gap-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.gap-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-sm);
+}
+
+.gap-have {
+  background: var(--teal-light);
+  color: var(--teal-dark);
+  border: 1px solid var(--teal-mid);
+}
+
+.gap-need {
+  background: var(--amber-light);
+  color: var(--amber-dark);
+  border: 1px solid var(--amber-mid);
+}
+
+.gap-learn {
+  background: var(--purple-light);
+  color: var(--purple-dark);
+  border: 1px solid var(--purple-mid);
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* SOFT SKILLS GRID                                             */
+/* ──────────────────────────────────────────────────────────── */
+.soft-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.soft-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.9rem;
+  text-align: center;
+}
+
+.soft-card svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke-width: 1.8;
+  margin: 0 auto 0.35rem;
+}
+
+.soft-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.soft-lvl {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  margin-top: 0.1rem;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* TIMELINE                                                     */
+/* ──────────────────────────────────────────────────────────── */
+.timeline {
+  position: relative;
+  padding-left: 1.75rem;
+}
+
+.tl-spine {
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 1.5px;
+  background: var(--border);
+}
+
+.tl-item {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+
+.tl-item:last-child { margin-bottom: 0; }
+
+.tl-dot {
+  position: absolute;
+  left: -27px;
+  top: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--blue);
+  background: var(--modal-bg);
+  transition: background var(--transition-base);
+}
+
+.tl-dot.active { background: var(--blue); }
+
+.tl-meta {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.tl-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  font-family: var(--font-display);
+}
+
+.tl-body {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  line-height: 1.65;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* TOOLS GRID                                                   */
+/* ──────────────────────────────────────────────────────────── */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.6rem;
+}
+
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  text-align: center;
+}
+
+.tool-card svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke-width: 1.8;
+  margin: 0 auto 0.3rem;
+}
+
+.tool-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.tool-lvl {
+  font-size: 11px;
+  color: var(--text-3);
+  margin: 0.2rem 0 0.4rem;
+}
+
+.dot-row {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+}
+
+.d {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.d.on-blue   { background: var(--blue);   }
+.d.on-teal   { background: var(--teal);   }
+.d.on-purple { background: var(--purple); }
+.d.on-amber  { background: var(--amber);  }
+
+/* ──────────────────────────────────────────────────────────── */
+/* EVIDENCE CARDS                                               */
+/* ──────────────────────────────────────────────────────────── */
+.ev-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-md);
+}
+
+.ev-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  border-top: 3px solid var(--blue);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.ev-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--node-glow);
+}
+
+.ev-card.ev-teal   { border-top-color: var(--teal);   }
+.ev-card.ev-purple { border-top-color: var(--purple); }
+.ev-card.ev-amber  { border-top-color: var(--amber);  }
+
+.ev-type {
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.ev-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  font-family: var(--font-display);
+}
+
+.ev-desc {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* SALARY / DEMAND BAR                                          */
+/* ──────────────────────────────────────────────────────────── */
+.sal-wrap { margin-top: var(--space-md); }
+
+.sal-lbl {
+  font-size: 12.5px;
+  color: var(--text-2);
+  margin-bottom: 0.4rem;
+}
+
+.sal-track {
+  height: 7px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sal-fill {
+  height: 100%;
+  width: 72%;
+  background: var(--teal);
+  border-radius: 4px;
+}
+
+.sal-val {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--teal-dark);
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+/* ──────────────────────────────────────────────────────────── */
+/* RESPONSIVE                                                   */
+/* ──────────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .soft-grid { grid-template-columns: repeat(2, 1fr); }
+}

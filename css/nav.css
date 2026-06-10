@@ -1,0 +1,108 @@
+/*
+ * nav.css
+ * ─────────────────────────────────────────────────────────────
+ * Sticky navigation bar: brand logo, section buttons,
+ * and the dark/light mode toggle.
+ * ─────────────────────────────────────────────────────────────
+ */
+
+#main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 var(--space-xl);
+  transition: background var(--transition-slow), border-color var(--transition-slow);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 58px;
+}
+
+/* ── Brand ─────────────────────────────────────────────────── */
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.nav-brand:hover { opacity: 0.75; }
+
+/* ── Links list ────────────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  align-items: center;
+}
+
+/* ── Nav buttons ───────────────────────────────────────────── */
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--text-sm);
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--text-2);
+  padding: 0.38rem 0.8rem;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.nav-btn:hover {
+  background: var(--blue-light);
+  color: var(--blue-dark);
+}
+
+.nav-btn.active {
+  background: var(--blue-light);
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* ── Theme toggle ──────────────────────────────────────────── */
+.theme-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  color: var(--text-2);
+  margin-left: 0.5rem;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.theme-btn:hover {
+  border-color: var(--blue);
+  transform: rotate(15deg);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  #main-nav { padding: 0 1rem; }
+
+  .nav-btn {
+    font-size: 11px;
+    padding: 0.3rem 0.5rem;
+  }
+}

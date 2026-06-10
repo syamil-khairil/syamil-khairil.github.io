@@ -1,0 +1,123 @@
+/**
+ * js/sections/evidence.js
+ * ─────────────────────────────────────────────────────────────
+ * Builds and injects the HTML content for the
+ * Evidence of Learning modal (section 04).
+ *
+ * Add new evidence items to the EVIDENCE array below.
+ * Each item renders as a card in the evidence grid.
+ * ─────────────────────────────────────────────────────────────
+ */
+
+/* ── Content data ─────────────────────────────────────────── */
+const EVIDENCE = [
+  {
+    accent: '',            /* default blue top border */
+    type:   'Coursework project · CSA30203',
+    title:  'Network monitoring dashboard',
+    desc:   `Built a Python tool using the Scapy library to capture and display live network
+      packets, parse TCP/IP headers, and flag anomalous traffic patterns. Submitted as a
+      practical lab assessment for the network security module.`,
+    tags: [
+      { label: 'Python',           color: 'tag-blue' },
+      { label: 'Scapy',            color: 'tag-teal' },
+      { label: 'Packet analysis',  color: 'tag-blue' },
+    ],
+  },
+  {
+    accent: 'ev-teal',
+    type:   'Online learning platform',
+    title:  'TryHackMe — Pre-Security path',
+    desc:   `Completed foundation modules covering networking fundamentals, web security
+      basics, and Linux command-line skills. Active profile with consistent room
+      completions — evidence link available on request.`,
+    tags: [
+      { label: 'TryHackMe',  color: 'tag-teal' },
+      { label: 'In progress', color: 'tag-teal' },
+      { label: 'Linux',       color: 'tag-blue' },
+    ],
+  },
+  {
+    accent: 'ev-purple',
+    type:   'Lab practical',
+    title:  'Cisco Packet Tracer networking labs',
+    desc:   `Designed and simulated enterprise network topologies including VLAN segmentation,
+      inter-VLAN routing, ACL policies, and basic firewall rule configuration through
+      structured university networking lab sessions.`,
+    tags: [
+      { label: 'Cisco',     color: 'tag-purple' },
+      { label: 'VLAN',      color: 'tag-blue'   },
+      { label: 'ACL rules', color: 'tag-blue'   },
+    ],
+  },
+  {
+    accent: 'ev-amber',
+    type:   'Software project · CSD34203',
+    title:  'Personal blog — GitHub Pages',
+    desc:   `Designed and deployed a responsive personal blog with HTML, CSS, and JavaScript
+      hosted on GitHub Pages. Features dark mode toggle, about and blog pages with 3 tech
+      posts, organised repository structure, and a full README with demo link.`,
+    tags: [
+      { label: 'HTML · CSS · JS', color: 'tag-amber' },
+      { label: 'GitHub Pages',    color: 'tag-amber' },
+    ],
+  },
+  {
+    accent: '',
+    type:   'Independent practice',
+    title:  'Wireshark packet analysis exercises',
+    desc:   `Conducted manual packet capture and analysis on local network traffic using
+      Wireshark. Identified HTTP, DNS, ARP, and TCP handshake patterns. Practised display
+      filters to isolate and investigate suspicious traffic behaviour.`,
+    tags: [
+      { label: 'Wireshark',        color: 'tag-blue' },
+      { label: 'PCAP',             color: 'tag-teal' },
+      { label: 'Traffic analysis', color: 'tag-blue' },
+    ],
+  },
+  {
+    accent: 'ev-teal',
+    type:   'Academic foundation',
+    title:  'FIK UniSZA — CS degree (ongoing)',
+    desc:   `Completed modules in Computer Networks, Database Systems, Operating Systems,
+      Data Structures, and Special Topics in Network Security and Software Development.
+      Actively pursuing the network security elective track.`,
+    tags: [
+      { label: 'UniSZA',    color: 'tag-teal' },
+      { label: 'CS degree', color: 'tag-blue' },
+      { label: 'Security track', color: 'tag-teal' },
+    ],
+  },
+];
+
+/* ── Render ───────────────────────────────────────────────── */
+function renderEvidence() {
+  const target = document.getElementById('evidence-body');
+  if (!target) return;
+
+  const cardsHTML = EVIDENCE.map(item => {
+    const tagsHTML = item.tags
+      .map(t => `<span class="tag ${t.color}">${t.label}</span>`)
+      .join('');
+
+    return `
+      <div class="ev-card ${item.accent}">
+        <div class="ev-type">${item.type}</div>
+        <div class="ev-title">${item.title}</div>
+        <div class="ev-desc">${item.desc}</div>
+        <div class="tag-row" style="margin-top:.75rem">${tagsHTML}</div>
+      </div>
+    `;
+  }).join('');
+
+  target.innerHTML = /* html */`
+    <p style="font-size:13.5px;margin-bottom:1.25rem">
+      Real projects, lab work, and learning activities that demonstrate applied
+      knowledge — not just academic theory.
+    </p>
+    <div class="ev-grid">${cardsHTML}</div>
+  `;
+}
+
+/* ── Init ─────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', renderEvidence);

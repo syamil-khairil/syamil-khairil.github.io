@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional e-portfolio of Ahmad Zulhilmi bin Zakaria — CS undergraduate at UniSZA, aspiring Network Security Analyst, targeting internship at Telekom Malaysia." />
+  <meta name="author" content="Ahmad Zulhilmi bin Zakaria" />
+  <meta property="og:title" content="Ahmad Zulhilmi — Network Security Analyst Portfolio" />
+  <meta property="og:description" content="Computer Science undergraduate at UniSZA seeking internship in network security." />
+  <meta property="og:type" content="website" />
+  <title>Ahmad Zulhilmi — Network Security Analyst | E-Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets (load order matters) -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+</head>
+<body>
+
+  <!-- ░░ ANIMATED BACKGROUND CANVAS ░░ -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ░░ NAVIGATION ░░ -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-brand" id="nav-brand" role="button" tabindex="0" aria-label="Go to homepage">
+        AZ · Portfolio
+      </div>
+      <ul class="nav-links" role="list">
+        <li><button data-modal="m-career"  class="nav-btn" id="nb-career">Career</button></li>
+        <li><button data-modal="m-skills"  class="nav-btn" id="nb-skills">Skills</button></li>
+        <li><button data-modal="m-plan"    class="nav-btn" id="nb-plan">Dev Plan</button></li>
+        <li><button data-modal="m-evidence"class="nav-btn" id="nb-evidence">Evidence</button></li>
+        <li><button data-modal="m-reflection" class="nav-btn" id="nb-reflection">Reflection</button></li>
+        <li>
+          <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark/light mode">
+            <span id="theme-icon">🌙</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ░░ HERO SECTION ░░ -->
+  <main id="hero-page" role="main">
+    <div class="hero-badge">
+      <span class="badge-dot" aria-hidden="true"></span>
+      Open to Internship · 2025
+    </div>
+
+    <div class="avatar" aria-label="Initials avatar">AZ</div>
+
+    <h1 class="hero-name">
+      Ahmad Zulhilmi<br />
+      <span>bin Zakaria</span>
+    </h1>
+
+    <p class="hero-role">Aspiring Network Security Analyst</p>
+
+    <div class="hero-chips" aria-label="Key skills and background">
+      <span class="chip chip-b">CompSci · UniSZA · FIK</span>
+      <span class="chip chip-t">Python · Linux · Networking</span>
+      <span class="chip chip-p">TryHackMe · Wireshark · Cisco</span>
+    </div>
+
+    <address class="hero-contacts">
+      <span class="contact-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        zulhilmi@student.unisza.edu.my
+      </span>
+      <span class="contact-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        github.com/zulhilmi-zakaria
+      </span>
+      <span class="contact-item">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Kuala Terengganu, Terengganu
+      </span>
+    </address>
+
+    <!-- Section entry cards -->
+    <div class="section-cards" role="list" aria-label="Portfolio sections">
+
+      <div class="sec-card" role="listitem button" tabindex="0" data-modal="m-career" aria-label="Open Career Exploration">
+        <div class="sec-card-icon icon-blue">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="sec-card-label">Career</div>
+          <div class="sec-card-sub">Exploration</div>
+        </div>
+      </div>
+
+      <div class="sec-card" role="listitem button" tabindex="0" data-modal="m-skills" aria-label="Open Skills Assessment">
+        <div class="sec-card-icon icon-teal">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div>
+          <div class="sec-card-label">Skills</div>
+          <div class="sec-card-sub">Assessment</div>
+        </div>
+      </div>
+
+      <div class="sec-card" role="listitem button" tabindex="0" data-modal="m-plan" aria-label="Open Career Development Plan">
+        <div class="sec-card-icon icon-purple">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        </div>
+        <div>
+          <div class="sec-card-label">Dev Plan</div>
+          <div class="sec-card-sub">Roadmap</div>
+        </div>
+      </div>
+
+      <div class="sec-card" role="listitem button" tabindex="0" data-modal="m-evidence" aria-label="Open Evidence of Learning">
+        <div class="sec-card-icon icon-amber">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <div>
+          <div class="sec-card-label">Evidence</div>
+          <div class="sec-card-sub">Projects</div>
+        </div>
+      </div>
+
+      <div class="sec-card" role="listitem button" tabindex="0" data-modal="m-reflection" aria-label="Open Personal Reflection">
+        <div class="sec-card-icon icon-purple">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div>
+          <div class="sec-card-label">Reflection</div>
+          <div class="sec-card-sub">Why TM?</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <p class="footer-credit" aria-hidden="true">Ahmad Zulhilmi · UniSZA · 2025</p>
+
+  <!-- ░░ MODALS ░░ — content injected by sections/*.js, wrappers here -->
+
+  <!-- Modal: Career -->
+  <div class="modal-overlay" id="m-career" role="dialog" aria-modal="true" aria-label="Career Exploration" hidden>
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-title-row">
+          <span class="modal-num bg-blue">01</span>
+          <h2 class="modal-h">Career Exploration</h2>
+        </div>
+        <button class="modal-close" data-close="m-career" aria-label="Close Career Exploration">✕</button>
+      </div>
+      <div class="modal-body" id="career-body"></div>
+    </div>
+  </div>
+
+  <!-- Modal: Skills -->
+  <div class="modal-overlay" id="m-skills" role="dialog" aria-modal="true" aria-label="Skills Assessment" hidden>
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-title-row">
+          <span class="modal-num bg-teal">02</span>
+          <h2 class="modal-h">Personal Skills Assessment</h2>
+        </div>
+        <button class="modal-close" data-close="m-skills" aria-label="Close Skills Assessment">✕</button>
+      </div>
+      <div class="modal-body" id="skills-body"></div>
+    </div>
+  </div>
+
+  <!-- Modal: Dev Plan -->
+  <div class="modal-overlay" id="m-plan" role="dialog" aria-modal="true" aria-label="Career Development Plan" hidden>
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-title-row">
+          <span class="modal-num bg-purple">03</span>
+          <h2 class="modal-h">Career Development Plan</h2>
+        </div>
+        <button class="modal-close" data-close="m-plan" aria-label="Close Career Development Plan">✕</button>
+      </div>
+      <div class="modal-body" id="plan-body"></div>
+    </div>
+  </div>
+
+  <!-- Modal: Evidence -->
+  <div class="modal-overlay" id="m-evidence" role="dialog" aria-modal="true" aria-label="Evidence of Learning" hidden>
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-title-row">
+          <span class="modal-num bg-amber">04</span>
+          <h2 class="modal-h">Evidence of Learning</h2>
+        </div>
+        <button class="modal-close" data-close="m-evidence" aria-label="Close Evidence of Learning">✕</button>
+      </div>
+      <div class="modal-body" id="evidence-body"></div>
+    </div>
+  </div>
+
+  <!-- Modal: Reflection -->
+  <div class="modal-overlay" id="m-reflection" role="dialog" aria-modal="true" aria-label="Personal Reflection" hidden>
+    <div class="modal-box">
+      <div class="modal-head">
+        <div class="modal-title-row">
+          <span class="modal-num bg-purple">05</span>
+          <h2 class="modal-h">Personal Reflection — Why Telekom Malaysia?</h2>
+        </div>
+        <button class="modal-close" data-close="m-reflection" aria-label="Close Personal Reflection">✕</button>
+      </div>
+      <div class="modal-body" id="reflection-body"></div>
+    </div>
+  </div>
+
+  <!-- ░░ SCRIPTS ░░ (deferred, load after DOM) -->
+  <script src="js/theme.js"    defer></script>
+  <script src="js/background.js" defer></script>
+  <script src="js/modal.js"    defer></script>
+  <script src="js/sections/career.js"     defer></script>
+  <script src="js/sections/skills.js"     defer></script>
+  <script src="js/sections/plan.js"       defer></script>
+  <script src="js/sections/evidence.js"   defer></script>
+  <script src="js/sections/reflection.js" defer></script>
+  <script src="js/main.js"     defer></script>
+
+</body>
+</html>
