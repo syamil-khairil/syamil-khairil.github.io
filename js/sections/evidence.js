@@ -33,8 +33,8 @@ const EVIDENCE = [
       VLANs, inter-VLAN routing, subnetting, ACLs, and basic firewall rules. Learned
       directly from industry experience, not just textbooks.`,
     images: [
-      { src: 'assets/NetworkBootcamp.jpg', alt: 'Bootcamp session — network lab activity' },
-      { src: 'assets/NetworkBootcamp(1).jpg', alt: 'Bootcamp session — Cisco Packet Tracer exercise' },
+      { src: 'assets/NetworkBootcamp.JPG', alt: 'Bootcamp session — network lab activity' },
+      { src: 'assets/NetworkBootcamp(1).JPG', alt: 'Bootcamp session — Cisco Packet Tracer exercise' },
     ],
     tags: [
       { label: 'Cisco Packet Tracer', color: 'tag-amber' },
