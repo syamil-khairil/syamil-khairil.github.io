@@ -417,3 +417,25 @@
 @media (max-width: 600px) {
   .soft-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+.ev-cert-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--purple);
+  border: 1px solid var(--purple-mid);
+  background: var(--purple-light);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.ev-cert-link:hover {
+  background: var(--purple);
+  color: #fff;
+  border-color: var(--purple);
+}
