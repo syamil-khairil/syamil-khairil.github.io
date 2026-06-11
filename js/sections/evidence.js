@@ -12,6 +12,25 @@
 /* ── Content data ─────────────────────────────────────────── */
 const EVIDENCE = [
   {
+  accent: 'ev-purple',
+  type:   'Certification',
+  title:  'Cisco CCNA Certificate',
+  desc:   `Completed the Cisco Certified Network Associate (CCNA) programme — covering
+    network fundamentals, IP connectivity, IP services, security fundamentals, automation,
+    and programmability. Validates hands-on ability to install, configure, and troubleshoot
+    enterprise networks.`,
+  certificate: {
+    file:  'assets/CCNA-Certificate.pdf',
+    label: 'View Certificate (PDF)',
+  },
+  tags: [
+    { label: 'Cisco CCNA',           color: 'tag-purple' },
+    { label: 'Network fundamentals', color: 'tag-blue'   },
+    { label: 'Security fundamentals',color: 'tag-teal'   },
+    { label: 'Certified',            color: 'tag-purple' },
+  ],
+},
+  {
     accent: '',
     type:   'Coursework project · CSA30203',
     title:  'Network monitoring dashboard',
