@@ -248,3 +248,18 @@
 
   .hero-contacts { gap: 0.85rem; }
 }
+
+/* Contact links — clickable */
+.hero-contacts a.contact-item {
+  color: var(--text-3);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.hero-contacts a.contact-item:hover {
+  color: var(--blue);
+}
+
+.hero-contacts a.contact-item:hover svg {
+  stroke: var(--blue);
+}
