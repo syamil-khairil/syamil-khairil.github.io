@@ -139,20 +139,36 @@ function renderEvidence() {
     .join('');
 
   const imagesHTML = item.images
-    ? item.images.map(img =>
-        `<img class="ev-card-img" src="${img.src}" alt="${img.alt}" loading="lazy" />`
-      ).join('')
-    : '';
+  ? item.images.map(img =>
+      `<img class="ev-card-img" src="${img.src}" alt="${img.alt}" loading="lazy" />`
+    ).join('')
+  : '';
 
-  return `
-    <div class="ev-card ${item.accent}">
-      ${imagesHTML}
-      <div class="ev-type">${item.type}</div>
-      <div class="ev-title">${item.title}</div>
-      <div class="ev-desc">${item.desc}</div>
-      <div class="tag-row" style="margin-top:.75rem">${tagsHTML}</div>
-    </div>
-  `;
+const certHTML = item.certificate
+  ? `<a class="ev-cert-link"
+        href="${item.certificate.file}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open ${item.title} certificate PDF">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+        </svg>
+        ${item.certificate.label}
+     </a>`
+  : '';
+
+return `
+  <div class="ev-card ${item.accent}">
+    ${imagesHTML}
+    <div class="ev-type">${item.type}</div>
+    <div class="ev-title">${item.title}</div>
+    <div class="ev-desc">${item.desc}</div>
+    <div class="tag-row" style="margin-top:.75rem">${tagsHTML}</div>
+    ${certHTML}
+  </div>
+`;
 }).join('');
 
   target.innerHTML = /* html */`
