@@ -20,7 +20,7 @@ const EVIDENCE = [
     and programmability. Validates hands-on ability to install, configure, and troubleshoot
     enterprise networks.`,
   certificate: {
-    file:  'assets/CCNA-Certificate.pdf',
+    file:  'assets/CCNA_Certificate.pdf',
     label: 'View Certificate (PDF)',
   },
   tags: [
