@@ -49,17 +49,13 @@
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: var(--blue-light);
   border: 3px solid var(--blue-mid);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--blue-dark);
   margin: 0 auto var(--space-lg);
   animation: fadeUp 0.6s 0.1s ease both;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  background: var(--blue-light);
 }
 
 /* ── Name ──────────────────────────────────────────────────── */
