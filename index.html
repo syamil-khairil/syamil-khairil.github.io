@@ -41,6 +41,7 @@
         <li><button data-modal="m-plan"    class="nav-btn" id="nb-plan">Dev Plan</button></li>
         <li><button data-modal="m-evidence"class="nav-btn" id="nb-evidence">Evidence</button></li>
         <li><button data-modal="m-reflection" class="nav-btn" id="nb-reflection">Reflection</button></li>
+        <li><button data-modal="m-education" class="nav-btn" id="nb-education">Education</button></li>
         <li>
           <button class="theme-btn" id="theme-toggle" aria-label="Toggle dark/light mode">
             <span id="theme-icon">🌙</span>
@@ -144,6 +145,16 @@
         </div>
       </div>
 
+      <div class="sec-card" role="listitem button" tabindex="0" data-modal="m-education" aria-label="Open Education History">
+  <div class="sec-card-icon icon-teal">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+  </div>
+  <div>
+    <div class="sec-card-label">Education</div>
+    <div class="sec-card-sub">My Journey</div>
+  </div>
+</div>
+
     </div>
   </main>
 
@@ -221,6 +232,20 @@
     </div>
   </div>
 
+  <!-- Modal: Education -->
+<div class="modal-overlay" id="m-education" role="dialog" aria-modal="true" aria-label="Education History" hidden>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div class="modal-title-row">
+        <span class="modal-num bg-teal">06</span>
+        <h2 class="modal-h">Education History</h2>
+      </div>
+      <button class="modal-close" data-close="m-education" aria-label="Close Education History">✕</button>
+    </div>
+    <div class="modal-body" id="education-body"></div>
+  </div>
+</div>
+
   <!-- ░░ SCRIPTS ░░ (deferred, load after DOM) -->
   <script src="js/theme.js"    defer></script>
   <script src="js/background.js" defer></script>
@@ -230,6 +255,7 @@
   <script src="js/sections/plan.js"       defer></script>
   <script src="js/sections/evidence.js"   defer></script>
   <script src="js/sections/reflection.js" defer></script>
+  <script src="js/sections/education.js"   defer></script>
   <script src="js/main.js"     defer></script>
 
 </body>
