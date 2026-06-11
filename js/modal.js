@@ -17,7 +17,7 @@
  */
 
 /* ── Registry ─────────────────────────────────────────────── */
-const MODALS = ['m-career', 'm-skills', 'm-plan', 'm-evidence', 'm-reflection'];
+const MODALS = ['m-career', 'm-skills', 'm-plan', 'm-evidence', 'm-reflection', 'm-education'];
 
 /** Map from modal id → nav button id */
 const NAV_MAP = {
@@ -26,6 +26,7 @@ const NAV_MAP = {
   'm-plan':       'nb-plan',
   'm-evidence':   'nb-evidence',
   'm-reflection': 'nb-reflection',
+  'm-education':  'nb-education',
 };
 
 let lastFocusedElement = null;
