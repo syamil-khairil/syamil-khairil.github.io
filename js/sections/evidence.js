@@ -12,16 +12,35 @@
 /* ── Content data ─────────────────────────────────────────── */
 const EVIDENCE = [
   {
-    accent: '',            /* default blue top border */
+    accent: '',
     type:   'Coursework project · CSA30203',
     title:  'Network monitoring dashboard',
     desc:   `Built a Python tool using the Scapy library to capture and display live network
       packets, parse TCP/IP headers, and flag anomalous traffic patterns. Submitted as a
       practical lab assessment for the network security module.`,
     tags: [
-      { label: 'Python',           color: 'tag-blue' },
-      { label: 'Scapy',            color: 'tag-teal' },
-      { label: 'Packet analysis',  color: 'tag-blue' },
+      { label: 'Python',          color: 'tag-blue' },
+      { label: 'Scapy',           color: 'tag-teal' },
+      { label: 'Packet analysis', color: 'tag-blue' },
+    ],
+  },
+  {
+    accent: 'ev-amber',
+    type:   'Workshop · Network Bootcamp',
+    title:  'Cisco Packet Tracer Bootcamp',
+    desc:   `Attended a hands-on network bootcamp led by a senior network analyst. Built and
+      configured real enterprise network topologies using Cisco Packet Tracer — covering
+      VLANs, inter-VLAN routing, subnetting, ACLs, and basic firewall rules. Learned
+      directly from industry experience, not just textbooks.`,
+    images: [
+      { src: 'assets/NetworkBootcamp.jpg', alt: 'Bootcamp session — network lab activity' },
+      { src: 'assets/NetworkBootcamp(1).jpg', alt: 'Bootcamp session — Cisco Packet Tracer exercise' },
+    ],
+    tags: [
+      { label: 'Cisco Packet Tracer', color: 'tag-amber' },
+      { label: 'VLAN & ACL',          color: 'tag-blue'  },
+      { label: 'Industry mentor',     color: 'tag-amber' },
+      { label: 'In-person workshop',  color: 'tag-teal'  },
     ],
   },
   {
@@ -32,7 +51,7 @@ const EVIDENCE = [
       basics, and Linux command-line skills. Active profile with consistent room
       completions — evidence link available on request.`,
     tags: [
-      { label: 'TryHackMe',  color: 'tag-teal' },
+      { label: 'TryHackMe',   color: 'tag-teal' },
       { label: 'In progress', color: 'tag-teal' },
       { label: 'Linux',       color: 'tag-blue' },
     ],
@@ -83,8 +102,8 @@ const EVIDENCE = [
       Data Structures, and Special Topics in Network Security and Software Development.
       Actively pursuing the network security elective track.`,
     tags: [
-      { label: 'UniSZA',    color: 'tag-teal' },
-      { label: 'CS degree', color: 'tag-blue' },
+      { label: 'UniSZA',         color: 'tag-teal' },
+      { label: 'CS degree',      color: 'tag-blue' },
       { label: 'Security track', color: 'tag-teal' },
     ],
   },
@@ -96,19 +115,26 @@ function renderEvidence() {
   if (!target) return;
 
   const cardsHTML = EVIDENCE.map(item => {
-    const tagsHTML = item.tags
-      .map(t => `<span class="tag ${t.color}">${t.label}</span>`)
-      .join('');
+  const tagsHTML = item.tags
+    .map(t => `<span class="tag ${t.color}">${t.label}</span>`)
+    .join('');
 
-    return `
-      <div class="ev-card ${item.accent}">
-        <div class="ev-type">${item.type}</div>
-        <div class="ev-title">${item.title}</div>
-        <div class="ev-desc">${item.desc}</div>
-        <div class="tag-row" style="margin-top:.75rem">${tagsHTML}</div>
-      </div>
-    `;
-  }).join('');
+  const imagesHTML = item.images
+    ? item.images.map(img =>
+        `<img class="ev-card-img" src="${img.src}" alt="${img.alt}" loading="lazy" />`
+      ).join('')
+    : '';
+
+  return `
+    <div class="ev-card ${item.accent}">
+      ${imagesHTML}
+      <div class="ev-type">${item.type}</div>
+      <div class="ev-title">${item.title}</div>
+      <div class="ev-desc">${item.desc}</div>
+      <div class="tag-row" style="margin-top:.75rem">${tagsHTML}</div>
+    </div>
+  `;
+}).join('');
 
   target.innerHTML = /* html */`
     <p style="font-size:13.5px;margin-bottom:1.25rem">
