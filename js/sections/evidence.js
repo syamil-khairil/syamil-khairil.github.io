@@ -172,6 +172,11 @@ function renderEvidence() {
   : '';
 
 const certHTML = item.certificate
+  const highlightsHTML = item.highlights
+  ? `<div class="ev-highlights">
+      ${item.highlights.map(h => `<span class="ev-highlight-pill">${h}</span>`).join('')}
+    </div>`
+  : '';
   ? `<a class="ev-cert-link"
         href="${item.certificate.file}"
         target="_blank"
@@ -192,6 +197,7 @@ return `
     <div class="ev-type">${item.type}</div>
     <div class="ev-title">${item.title}</div>
     <div class="ev-desc">${item.desc}</div>
+    ${highlightsHTML}
     <div class="tag-row" style="margin-top:.75rem">${tagsHTML}</div>
     ${certHTML}
   </div>
