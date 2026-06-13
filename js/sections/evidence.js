@@ -12,6 +12,33 @@
 /* ── Content data ─────────────────────────────────────────── */
 const EVIDENCE = [
   {
+  accent: 'ev-teal',
+  type:   'Final Year Project · CSA · UniSZA 2026',
+  title:  'Detection of Steganographic Image Threats Using DNN',
+  desc:   `Developed an intelligent web-based detection system that identifies steganographic
+    threats hidden inside digital images — a cyberattack technique known as stegomalware.
+    The system uses a custom 3-SubNet Deep Neural Network (DNN) architecture optimized with
+    AdamW to classify images as "Clean" or "Malicious" by detecting hidden payloads embedded
+    in pixel LSB (Least Significant Bit) data. Achieves target detection accuracy of 85%+
+    with a False Positive Rate below 10%, processing images in under 2 seconds.`,
+  highlights: [
+    '44,000-image training dataset',
+    '3-SubNet DNN architecture',
+    'LSB Noise Map visualisation',
+    'Real-time web GUI (drag & drop)',
+    'AdamW optimizer for generalisation',
+  ],
+  tags: [
+    { label: 'Python',           color: 'tag-teal'   },
+    { label: 'Deep Learning',    color: 'tag-purple' },
+    { label: 'DNN / AI',         color: 'tag-purple' },
+    { label: 'Cybersecurity',    color: 'tag-teal'   },
+    { label: 'Image Forensics',  color: 'tag-blue'   },
+    { label: 'Steganalysis',     color: 'tag-blue'   },
+    { label: 'Web GUI',          color: 'tag-blue'   },
+  ],
+},
+  {
   accent: 'ev-purple',
   type:   'Certification',
   title:  'Cisco CCNA Certificate',
