@@ -161,48 +161,49 @@ function renderEvidence() {
   if (!target) return;
 
   const cardsHTML = EVIDENCE.map(item => {
-  const tagsHTML = item.tags
-    .map(t => `<span class="tag ${t.color}">${t.label}</span>`)
-    .join('');
+    const tagsHTML = item.tags
+      .map(t => `<span class="tag ${t.color}">${t.label}</span>`)
+      .join('');
 
-  const imagesHTML = item.images
-  ? item.images.map(img =>
-      `<img class="ev-card-img" src="${img.src}" alt="${img.alt}" loading="lazy" />`
-    ).join('')
-  : '';
+    const imagesHTML = item.images
+      ? item.images.map(img =>
+          `<img class="ev-card-img" src="${img.src}" alt="${img.alt}" loading="lazy" />`
+        ).join('')
+      : '';
 
-const certHTML = item.certificate
-  const highlightsHTML = item.highlights
-  ? `<div class="ev-highlights">
-      ${item.highlights.map(h => `<span class="ev-highlight-pill">${h}</span>`).join('')}
-    </div>`
-  : '';
-  ? `<a class="ev-cert-link"
-        href="${item.certificate.file}"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open ${item.title} certificate PDF">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-        </svg>
-        ${item.certificate.label}
-     </a>`
-  : '';
+    const highlightsHTML = item.highlights
+      ? `<div class="ev-highlights">
+          ${item.highlights.map(h => `<span class="ev-highlight-pill">${h}</span>`).join('')}
+        </div>`
+      : '';
 
-return `
-  <div class="ev-card ${item.accent}">
-    ${imagesHTML}
-    <div class="ev-type">${item.type}</div>
-    <div class="ev-title">${item.title}</div>
-    <div class="ev-desc">${item.desc}</div>
-    ${highlightsHTML}
-    <div class="tag-row" style="margin-top:.75rem">${tagsHTML}</div>
-    ${certHTML}
-  </div>
-`;
-}).join('');
+    const certHTML = item.certificate
+      ? `<a class="ev-cert-link"
+            href="${item.certificate.file}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open ${item.title} certificate PDF">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            ${item.certificate.label}
+         </a>`
+      : '';
+
+    return `
+      <div class="ev-card ${item.accent}">
+        ${imagesHTML}
+        <div class="ev-type">${item.type}</div>
+        <div class="ev-title">${item.title}</div>
+        <div class="ev-desc">${item.desc}</div>
+        ${highlightsHTML}
+        <div class="tag-row" style="margin-top:.75rem">${tagsHTML}</div>
+        ${certHTML}
+      </div>
+    `;
+  }).join('');
 
   target.innerHTML = /* html */`
     <p style="font-size:13.5px;margin-bottom:1.25rem">
@@ -212,6 +213,9 @@ return `
     <div class="ev-grid">${cardsHTML}</div>
   `;
 }
+
+/* ── Init ─────────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', renderEvidence);
 
 /* ── Init ─────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', renderEvidence);
