@@ -1,9 +1,7 @@
 # Muhammad Syamil — E-Portfolio
 
 **Professional e-portfolio** for internship applications in network security.
-Built for two UniSZA assignments simultaneously:
-- **CSA30203** Special Topics in Computer Network Security (20%)
-- **CSD34203** Special Topics in Software Development — GitHub Portfolio (20%)
+
 
 Live demo: `https://syamil-khairil.github.io` 
 
