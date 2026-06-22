@@ -153,6 +153,27 @@ const EVIDENCE = [
       { label: 'Security track', color: 'tag-teal' },
     ],
   },
+  {
+  accent: 'ev-purple',
+  type:   'Security Tool · Python',
+  title:  'PassGuard — Password Auditor & Breach Checker',
+  desc:   `A command-line security tool that audits password strength and checks
+    breach exposure using the k-anonymity model — the password is never sent over
+    the network. Demonstrates SHA-1 hashing, Shannon entropy, secure input handling,
+    and clean modular Python architecture.`,
+  highlights: [
+    'k-Anonymity privacy model',
+    'SHA-1 hashing',
+    'Entropy calculation',
+    'Zero-dependency core',
+  ],
+  tags: [
+    { label: 'Python',        color: 'tag-purple' },
+    { label: 'Cybersecurity', color: 'tag-teal'   },
+    { label: 'Cryptography',  color: 'tag-blue'   },
+    { label: 'CLI tool',      color: 'tag-blue'   },
+  ],
+},
 ];
 
 /* ── Render ───────────────────────────────────────────────── */
